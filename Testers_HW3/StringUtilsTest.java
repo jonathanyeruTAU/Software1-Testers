@@ -88,6 +88,10 @@ class StringUtilsTest {
 		void testAddEnd() {
 			assertTrue(StringUtils.isEditDistanceOne("ab", "abb"));
 		}
+		@Test
+		void testMoreThanTWO() {
+			assertFalse(StringUtils.isEditDistanceOne("dog", "cat"));
+		}
 	}
 
 }
