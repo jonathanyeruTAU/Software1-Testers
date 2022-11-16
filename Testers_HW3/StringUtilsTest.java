@@ -92,6 +92,10 @@ class StringUtilsTest {
 		void testMoreThanTWO() {
 			assertFalse(StringUtils.isEditDistanceOne("dog", "cat"));
 		}
+		@Test
+		void testMoreChar() {
+			assertFalse(StringUtils.isEditDistanceOne("ababa", "bbab"));
+		}
 	}
 
 }
