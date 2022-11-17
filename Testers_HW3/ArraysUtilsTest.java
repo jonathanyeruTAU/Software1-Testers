@@ -95,6 +95,11 @@ class ArraysUtilsTest {
 			void testInfiniteLoopWithPath() {
 				int[][] graph = {{0, 1, 0, 0}, {0, 0, 1, 1}, {1, 0, 0, 0}, {0, 0, 0, 0}};
 				assertEquals(ArrayUtils.findShortestPath(graph, 2, 3), 3);
-			}	
+			}
+			@Test
+			void testManyPathsSelf() {
+				int[][] graph = {{1, 1, 0, 1}, {0, 0, 0, 1}, {0, 0, 0, 0}, {0, 0, 1, 0}};
+				assertEquals(ArrayUtils.findShortestPath(graph, 0, 2), 2);
+			}
 	}
 }
