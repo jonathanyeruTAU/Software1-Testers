@@ -11,30 +11,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.validator.PublicClassValidator;
 
 class WordPuzzleJYTest {
-	@Nested class myFuncs{
-		public String hello = "hello";
-		public char[] puzzle = {'h', '_', '_', '_', 'o'};
-		@Test void testLeftPad() {
-			assertEquals(WordPuzzle.leftPad("1001", '0', 3), "0001001");
-			assertEquals(WordPuzzle.leftPad("1", '0', 0), "1");
-		}
-		@Test void testChoose() {
-			assertEquals(WordPuzzle.choose(10, 5), 252);
-			assertEquals(WordPuzzle.choose(5, 3), 10);
-		}
-		@Test void testToTemplate() {
-			assertArrayEquals(WordPuzzle.toTemplate("1001", 5), new boolean[]
-					{false, true, false, false, true});
-		}
-		@Test void testCountOnes() {
-			assertEquals(WordPuzzle.countOnes(new boolean[]
-					{false, true, false, false, true}), 2);
-		}
-		@Test void testGetLeftChars() {
-			assertArrayEquals(WordPuzzle.getCorrecrCharsLeft(hello, puzzle), new char[] {'e', 'l'});
-		}
-	}
-
 	// didn't do one for createTemplate, i think they covered that one well
 	@Nested class TestcheCkLegalTemplate{
 		public String hello = "hello";
