@@ -10,12 +10,14 @@ class PolynomialTest {
 	public Polynomial emptyPolynomial = new Polynomial();
 	public Polynomial bigPolynomial = new Polynomial(new double[] {1, 2, 3, 0, 1});
 	public Polynomial smallPolynomial = new Polynomial(new double[] {1, 2}); 
+	public Polynomial annoyingPolynomial = new Polynomial(new double[] {1, 2, -3, 2, -1});
 	
 	@Before
 	void setup() {
 		this.emptyPolynomial = new Polynomial();
 		this.bigPolynomial = new Polynomial(new double[] {1, 2, 3, 0, 1});
-		this.smallPolynomial = new Polynomial(new double[] {1, 2}); 
+		this.smallPolynomial = new Polynomial(new double[] {1, 2});
+		this.annoyingPolynomial = new Polynomial(new double[] {1, 2, -3, 2, -1});
 	}
 	
 	@Test
@@ -55,6 +57,7 @@ class PolynomialTest {
 		
 		// the real test
 		assertEquals(emptyPolynomial.getCoefficient(5), 0);
+		assertEquals(bigPolynomial.getCoefficient(100), 0);
 	}
 	
 	@Test
@@ -62,6 +65,7 @@ class PolynomialTest {
 		smallPolynomial.setCoefficient(4, 1);
 		smallPolynomial.setCoefficient(4, 0);
 		assertEquals(1, smallPolynomial.getDegree());
+		assertEquals(smallPolynomial.computePolynomial(1), 3);
 	}
 	
 	@Test
@@ -80,6 +84,13 @@ class PolynomialTest {
 		Polynomial x2 = new Polynomial(new double[] {0, 0, 1});
 		assertTrue(x2.isExtrema(0));
 		assertFalse(x2.isExtrema(1));
+	}
+	
+	@Test
+	void IAmAnAnooyingUser() {
+		Polynomial addedPolynomial = bigPolynomial.adds(annoyingPolynomial);
+		assertEquals(addedPolynomial.getDegree(), 3);
+		assertEquals(addedPolynomial.computePolynomial(1), 8);
 	}
 
 }
