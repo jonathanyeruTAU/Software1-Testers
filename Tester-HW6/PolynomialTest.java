@@ -77,9 +77,9 @@ class PolynomialTest {
 	
 	@Test
 	void testIsExtrime() {
-		Polynomial x4 = new Polynomial(new double[] {0, 0, 0, 0, 1});
-		assertTrue(x4.isExtrema(0));
-		assertFalse(x4.isExtrema(1));
+		Polynomial x2 = new Polynomial(new double[] {0, 0, 1});
+		assertTrue(x2.isExtrema(0));
+		assertFalse(x2.isExtrema(1));
 	}
 
 }
