@@ -67,7 +67,7 @@ class PolynomialTest {
 	@Test
 	void testDerivative() {
 		assertEquals(bigPolynomial.getFirstDerivation().computePolynomial(1), 
-				new Polynomial(new double[] {2, 3, 0, 1}).computePolynomial(1));
+				new Polynomial(new double[] {2, 6, 0, 4}).computePolynomial(1));
 		
 		assertEquals(emptyPolynomial.getFirstDerivation().computePolynomial(1),
 				0);
